@@ -90,7 +90,7 @@ const StatCard = ({ value, label, icon, color }: any) => (
   </div>
 );
 
-export default function Dashboard() {
+export default function dashboard() {
   return (
     <div className="w-full p-6 space-y-6 bg-gray-50 min-h-screen">
       {/* Header */}

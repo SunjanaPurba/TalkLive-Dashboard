@@ -29,7 +29,7 @@
 import { route, index } from "@react-router/dev/routes";
 
 export const publicRoutes = [
-  index("components/pages/dashboard/Dashboard.tsx"),
+  index("components/pages/dashboard/dashboard.tsx"),
 
   route("students", "components/pages/studentpage/Studentpage.tsx"),
   route("edit-student/:id", "components/pages/studentpage/EditStudent.tsx"),
