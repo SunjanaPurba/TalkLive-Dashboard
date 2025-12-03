@@ -22,7 +22,7 @@ const data: EarningsData[] = [
   { month: "Apr", earnings: 45000 },
   { month: "May", earnings: 60000 },
   { month: "Jun", earnings: 30000 },
-  { month: "Jul", earnings: 75745 }, 
+  { month: "Jul", earnings: 75745 },
   { month: "Aug", earnings: 65000 },
   { month: "Sep", earnings: 40000 },
   { month: "Oct", earnings: 35000 },
@@ -65,7 +65,7 @@ const EarningsChart: React.FC = () => {
           {data.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
-              fill={index === 6 ? "#144B8A" : "#F3F3FF"} 
+              fill={index === 6 ? "#144B8A" : "#F3F3FF"}
               stroke="#E5E7EB"
               strokeWidth={1}
             />

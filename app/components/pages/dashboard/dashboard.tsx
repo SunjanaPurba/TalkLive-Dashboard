@@ -7,7 +7,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
-import EarningsChart from "./EarningsChart"; // Your chart component
+import EarningsChart from "./EarningsChart";
 
 const classes = [
   {
@@ -93,10 +93,7 @@ const StatCard = ({ value, label, icon, color }: any) => (
 export default function dashboard() {
   return (
     <div className="w-full p-6 space-y-6 bg-gray-50 min-h-screen">
-      {/* Header */}
       <h1 className="text-2xl font-semibold">Good Morning, Rana!</h1>
-
-      {/* Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard
           value="450"
@@ -123,12 +120,8 @@ export default function dashboard() {
           color="bg-[#DCFAE6]"
         />
       </div>
-
-      {/* Earnings & Forum */}
       <div className="min-h-screen bg-gray-50 p-6 space-y-6">
-        {/* Top Grid - Earnings and Forum */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6">
-          {/* Earnings */}
           <div className="bg-white shadow-sm rounded-2xl p-6 border border-gray-200 flex flex-col">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
               <div>
@@ -142,7 +135,7 @@ export default function dashboard() {
                   </span>
                 </p>
               </div>
-              <button className="flex items-center gap-2 text-sm px-4 py-2 border border-gray-300 text-gray-700 rounded-lg bg-white shadow-sm mt-4 sm:mt-0">
+              <button className="flex items-center gap-2 text-sm px-4 py-2 ring ring-[#144B8A] text-[#144B8A] rounded-full bg-white shadow-sm mt-4 sm:mt-0">
                 <svg
                   width="16"
                   height="16"
@@ -179,8 +172,6 @@ export default function dashboard() {
               <EarningsChart />
             </div>
           </div>
-
-          {/* Recent School Forum */}
           <div className="bg-white rounded-2xl border-2 border-blue-600 p-5">
             <div className="border-2  border-gray-300 rounded-xl p-4">
               <div className="flex justify-between items-center mb-4">
@@ -260,58 +251,46 @@ export default function dashboard() {
             </div>
           </div>
         </div>
+        <div className="bg-[#F8FAFC] px-6 py-5 rounded-t-2xl border-b border-gray-100">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 flex-1">
+              <h2 className="text-xl font-semibold text-gray-900 whitespace-nowrap">
+                Our All Class
+              </h2>
 
-        {/* Our All Class Header */}
-      <div className="bg-[#F8FAFC] px-6 py-5 rounded-t-2xl border-b border-gray-100">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-
-        {/* Left Side: Title + Filters */}
-        <div className="flex flex-col md:flex-row md:items-center gap-4 flex-1">
-          <h2 className="text-xl font-semibold text-gray-900 whitespace-nowrap">
-            Our All Class
-          </h2>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            {/* Search */}
-            <div className="relative w-full sm:w-64">
-              <input
-                type="text"
-                placeholder="Search Course"
-                className="w-full pl-10 pr-4 py-2.5 ring ring-gray-200 rounded-full bg-gray-50 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <CiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                <div className="relative w-full sm:w-64">
+                  <input
+                    type="text"
+                    placeholder="Search Course"
+                    className="w-full pl-10 pr-4 py-2.5 ring ring-gray-200 rounded-full bg-gray-50 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  <CiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
+                </div>
+                <select className="px-5 py-2.5 ring ring-gray-200 rounded-full bg-gray-50 text-sm text-gray-600 focus:outline-none">
+                  <option>Date range</option>
+                </select>
+                <select className="px-5 py-2.5 ring ring-gray-200 rounded-full bg-gray-50 text-sm text-gray-600 focus:outline-none">
+                  <option>Sort by</option>
+                </select>
+              </div>
             </div>
-
-            {/* Date Range */}
-            <select className="px-5 py-2.5 ring ring-gray-200 rounded-full bg-gray-50 text-sm text-gray-600 focus:outline-none">
-              <option>Date range</option>
-            </select>
-
-            {/* Sort By */}
-            <select className="px-5 py-2.5 ring ring-gray-200 rounded-full bg-gray-50 text-sm text-gray-600 focus:outline-none">
-              <option>Sort by</option>
-            </select>
+            <div className="flex items-center gap-3">
+              <button className="px-6 py-2.5 bg-[#144B8A] text-white text-sm font-medium rounded-full hover:bg-[#0F172A] transition-colors whitespace-nowrap">
+                View All
+              </button>
+              <div className="flex gap-2">
+                <button className="p-2.5 ring ring-[#144B8A] rounded-full bg-white hover:bg-gray-50 transition-colors">
+                  <FaArrowLeft className="text-[#144B8A] text-sm" />
+                </button>
+                <button className="p-2.5 border border-gray-200 rounded-full bg-[#144B8A] hover:bg-gray-50 transition-colors">
+                  <FaArrowRight className="text-white text-sm" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Right Side: View All + Arrows */}
-        <div className="flex items-center gap-3">
-          <button className="px-6 py-2.5 bg-[#144B8A] text-white text-sm font-medium rounded-full hover:bg-[#0F172A] transition-colors whitespace-nowrap">
-            View All
-          </button>
-          <div className="flex gap-2">
-            <button className="p-2.5 ring ring-[#144B8A] rounded-full bg-white hover:bg-gray-50 transition-colors">
-              <FaArrowLeft className="text-[#144B8A] text-sm" />
-            </button>
-            <button className="p-2.5 border border-gray-200 rounded-full bg-[#144B8A] hover:bg-gray-50 transition-colors">
-              <FaArrowRight className="text-white text-sm" />
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-        {/* Classes Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {classes.map((item, i) => (
             <div
@@ -360,10 +339,7 @@ export default function dashboard() {
           ))}
         </div>
       </div>
-
-      {/* Recent Tables */}
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-        {/* Recent Students */}
         <div className="bg-white shadow rounded-xl p-6">
           <div className="flex justify-between mb-3">
             <h2 className="text-lg font-semibold mb-3">
@@ -400,8 +376,6 @@ export default function dashboard() {
             </table>
           </div>
         </div>
-
-        {/* Recent Class Forum */}
         <div className="bg-white shadow rounded-xl p-6">
           <div className="flex justify-between mb-3">
             <h2 className="text-lg font-semibold mb-3">Recent Class Forum</h2>

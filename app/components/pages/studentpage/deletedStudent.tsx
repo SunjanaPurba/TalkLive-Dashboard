@@ -13,7 +13,9 @@ const DeleteStudent: React.FC = () => {
   if (!student) {
     return (
       <div className="p-6">
-        <h2 className="text-xl font-semibold text-gray-800">Student not found</h2>
+        <h2 className="text-xl font-semibold text-gray-800">
+          Student not found
+        </h2>
         <button
           onClick={() => navigate("/students")}
           className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md"
@@ -36,8 +38,6 @@ const DeleteStudent: React.FC = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm z-50 p-4">
       <div className="bg-white w-full max-w-md md:max-w-lg lg:w-[572px] rounded-[16px] shadow-lg overflow-hidden">
-        
-        {/* Top Section */}
         <div className="flex items-start md:items-center gap-4 p-4 md:p-6">
           <div className="w-12 h-12 bg-[#FCE9E9] rounded-full flex items-center justify-center flex-shrink-0">
             <AlertTriangle className="w-6 h-6 text-[#F04438]" />
@@ -48,14 +48,12 @@ const DeleteStudent: React.FC = () => {
               Delete
             </h2>
             <p className="text-sm md:text-base text-[#535862]">
-              Are you sure you want to delete this student? This action cannot be undone.
+              Are you sure you want to delete this student? This action cannot
+              be undone.
             </p>
           </div>
         </div>
-
-        {/* Footer Buttons */}
         <div className="flex flex-col sm:flex-row justify-end gap-3 bg-[#F9FAFB] p-4 md:p-6 rounded-b-[16px]">
-
           <button
             className="px-6 py-2 rounded-full ring-1 ring-gray-400 bg-white text-[#535862] text-sm md:text-base w-full sm:w-[110px]"
             onClick={handleCancel}
@@ -69,7 +67,6 @@ const DeleteStudent: React.FC = () => {
           >
             Delete
           </button>
-
         </div>
       </div>
     </div>

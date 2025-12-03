@@ -55,11 +55,9 @@ const TutorManagement = () => {
       </h2>
 
       <div className="bg-white rounded-lg shadow-sm">
-        {/* Filters & Add Button */}
         <div className="p-4 lg:p-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex flex-col sm:flex-row gap-3 w-full">
-              {/* Search */}
               <div className="relative">
                 <input
                   type="text"
@@ -80,26 +78,18 @@ const TutorManagement = () => {
                   />
                 </svg>
               </div>
-
-              {/* Date range */}
               <select className="px-4 py-2 ring ring-gray-400 rounded-full bg-gray-50 text-gray-400 text-sm">
                 <option>Date range</option>
               </select>
-
-              {/* Sort */}
               <select className="px-4 py-2 ring ring-gray-400 rounded-full bg-gray-50 text-gray-400 text-sm">
                 <option>Sort by</option>
               </select>
             </div>
-
-            {/* Add Tutor Button */}
             <button className="px-5 py-2 whitespace-nowrap bg-[#144B8A] text-white rounded-full flex items-center justify-center gap-2">
               + Add Tutor
             </button>
           </div>
         </div>
-
-        {/* Desktop Table */}
         <div className="hidden lg:block overflow-x-auto">
           <table className="w-full text-left">
             <thead className="bg-gray-100 text-gray-600">
@@ -140,8 +130,6 @@ const TutorManagement = () => {
             </tbody>
           </table>
         </div>
-
-        {/* Mobile Card View (Column-wise) */}
         <div className="block lg:hidden px-4 pb-6 space-y-4">
           {students.map((s, i) => (
             <div key={i} className="border rounded-lg p-5 bg-white">

@@ -28,13 +28,9 @@ export default function Topbar() {
           size={24}
           className="text-gray-600 cursor-pointer bg-[#F0F9FF] rounded-full p-1 hover:text-gray-800"
         />
-
-        {/* Profile Image */}
         <div className="w-10 h-10 rounded-full overflow-hidden">
           <img src={img} alt="Rana" className="w-full h-full object-cover" />
         </div>
-
-        {/* Name and Email */}
         <div className="flex flex-col text-right sm:text-left">
           <span className="font-semibold text-sm sm:text-base">
             Hossain Rana
@@ -43,8 +39,6 @@ export default function Topbar() {
             Rana@potentialai.com
           </span>
         </div>
-
-        {/* Dropdown Arrow */}
         <IoMdArrowDropdown size={24} className="text-gray-600 cursor-pointer" />
       </div>
     </div>

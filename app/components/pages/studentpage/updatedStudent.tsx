@@ -14,8 +14,6 @@ const UpdatedStudent: React.FC = () => {
   return (
     <div className="min-h-screen p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
-
-        {/* Header */}
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6">
           <h1 className="text-xl md:text-2xl font-bold text-gray-900">
             Student Details
@@ -28,16 +26,11 @@ const UpdatedStudent: React.FC = () => {
             Edit Student
           </button>
         </div>
-
-        {/* Content Card */}
         <div className="bg-white rounded-lg border-2 border-blue-500 shadow-sm p-4 md:p-8">
           <div className="bg-[#F5F7FB] p-4 rounded-lg">
-
             <h3 className="text-base font-semibold text-gray-900 mb-6">
               General Information
             </h3>
-
-            {/* Profile Picture */}
             <div className="mb-8 flex justify-center md:justify-start">
               <div className="w-20 h-20 bg-orange-400 rounded-full flex items-center justify-center overflow-hidden">
                 <img
@@ -47,11 +40,8 @@ const UpdatedStudent: React.FC = () => {
                 />
               </div>
             </div>
-
-            {/* Info Grid */}
             <div className="space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-8">
-
                 <div>
                   <p className="text-sm font-semibold text-gray-900 mb-2">
                     Full Name
@@ -84,9 +74,7 @@ const UpdatedStudent: React.FC = () => {
                   <p className="text-sm font-semibold text-gray-900 mb-2">
                     Nationality
                   </p>
-                  <p className="text-sm text-gray-600">
-                    {student.nationality}
-                  </p>
+                  <p className="text-sm text-gray-600">{student.nationality}</p>
                 </div>
 
                 <div>
@@ -112,8 +100,6 @@ const UpdatedStudent: React.FC = () => {
                   </p>
                 </div>
               </div>
-
-              {/* Joining Date */}
               <div>
                 <p className="text-sm font-semibold text-gray-900 mb-2">
                   Joining Date
@@ -122,8 +108,6 @@ const UpdatedStudent: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Back Button */}
           <div className="mt-8 flex justify-end">
             <button
               onClick={() => navigate("/students")}

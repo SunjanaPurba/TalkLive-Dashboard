@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Logo } from "~/utils/images/logo1.image";
-import { Link } from "react-router";
-import { FiMenu, FiX } from "react-icons/fi"; // hamburger & close
+import { Link, useLocation } from "react-router";
 import {
+  FiMenu,
+  FiX,
   FiUsers,
   FiBook,
   FiSettings,
@@ -15,8 +16,8 @@ import { BiCategoryAlt } from "react-icons/bi";
 import { TiDocumentText } from "react-icons/ti";
 
 const Sidebar = () => {
-  const [active, setActive] = useState("Dashboard");
-  const [isOpen, setIsOpen] = useState(false); // mobile toggle
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const menus = [
     { name: "Dashboard", path: "/", icon: <BiCategoryAlt size={20} /> },
@@ -54,51 +55,48 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Header with Hamburger */}
       <header className="lg:hidden fixed top-0 left-0 w-full bg-white shadow-md z-50 flex items-center justify-between px-4 h-16">
         <img src={Logo} alt="logo" className="w-[150px]" />
         <button onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
         </button>
       </header>
-
-      {/* Sidebar */}
       <aside
         className={`
-    fixed inset-y-0 left-0 z-40 
-    w-[314px] h-[1678px] 
-    bg-white shadow-lg flex flex-col transition-transform duration-300 ease-in-out
-    ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-    lg:translate-x-0 lg:static lg:z-auto 
-    pt-20 lg:pt-6 px-4 py-6 overflow-y-auto
-    border-r border-gray-200
-    opacity-100
-    rounded-tr-[16px] rounded-br-[16px] rounded-bl-[16px]
-  `}
+        fixed inset-y-0 left-0 z-40
+        w-[314px] bg-white shadow-lg flex flex-col
+        transition-transform duration-300 ease-in-out
+        ${isOpen ? "translate-x-0" : "-translate-x-full"}
+        lg:translate-x-0 lg:static
+        pt-20 lg:pt-6 px-4 py-6 overflow-y-auto
+        border-r border-gray-200 rounded-tr-[16px] rounded-br-[16px] rounded-bl-[16px]
+      `}
       >
-        {/* Logo for large screens */}
         <div className="hidden lg:block mb-8 text-center">
           <img src={Logo} alt="logo" className="w-[170px] mx-auto" />
         </div>
-
-        {/* Menu Items */}
         <nav className="flex flex-col gap-1">
-          {menus.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              onClick={() => setActive(item.name)}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm
-          ${
-            active === item.name
-              ? "bg-[#D7E9FF] text-[#144B8A] shadow-sm"
-              : "text-gray-600 hover:bg-blue-50 hover:text-[#144B8A]"
-          }`}
-            >
-              {item.icon}
-              <span>{item.name}</span>
-            </Link>
-          ))}
+          {menus.map((item) => {
+            const isActive = location.pathname === item.path;
+
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm
+                  ${
+                    isActive
+                      ? "bg-[#D7E9FF] text-[#144B8A] shadow-sm"
+                      : "text-gray-600 hover:bg-blue-50 hover:text-[#144B8A]"
+                  }
+                `}
+              >
+                {item.icon}
+                <span>{item.name}</span>
+              </Link>
+            );
+          })}
         </nav>
       </aside>
     </>
