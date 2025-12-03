@@ -22,16 +22,32 @@
 
 
 
+// import { route, index } from "@react-router/dev/routes";
+
+// export const publicRoutes = [
+//   index("components/pages/dashboard/dashboard.tsx"),
+
+//   route("students", "components/pages/studentpage/StudentPage.tsx"),
+//   route("edit-student/:id", "components/pages/studentpage/EditStudent.tsx"),
+//   route("student-updated/:id", "components/pages/studentpage/UpdatedStudent.tsx"),
+//   route("deleted-student/:id", "components/pages/studentpage/DeletedStudent.tsx"),
+//   route("tutors", "components/pages/tutor/Tutor.tsx"),
+//   route("classes", "components/pages/class/Class.tsx"),
+// ];
+
+
+// app/routes/public.routes.ts
 import { route, index } from "@react-router/dev/routes";
 
 export const publicRoutes = [
   index("components/pages/dashboard/dashboard.tsx"),
 
-  route("students", "components/pages/studentpage/StudentPage.tsx"),
-  route("edit-student/:id", "components/pages/studentpage/EditStudent.tsx"),
-  route("student-updated/:id", "components/pages/studentpage/UpdatedStudent.tsx"),
-  route("deleted-student/:id", "components/pages/studentpage/DeletedStudent.tsx"),
-  route("tutors", "components/pages/tutor/Tutor.tsx"),
-  route("classes", "components/pages/class/Class.tsx"),
+  route("students", "components/pages/studentpage/studentpage.tsx"),
+  route("edit-student/:id", "components/pages/studentpage/editstudent.tsx"),
+  route("student-updated/:id", "components/pages/studentpage/updatedStudent.tsx"),
+  route("deleted-student/:id", "components/pages/studentpage/deletedStudent.tsx"),
+  route("tutors", "components/pages/tutor/tutor.tsx"),
+  route("classes", "components/pages/class/class.tsx"),
 ];
+
 
