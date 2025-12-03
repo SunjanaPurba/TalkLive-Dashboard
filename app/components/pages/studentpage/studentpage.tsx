@@ -4,7 +4,7 @@ import { FaPenToSquare } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { useStudents } from "./studentContext";
 
-const StudentManagement: React.FC = () => {
+const StudentPage: React.FC = () => {
   const navigate = useNavigate();
   const { students } = useStudents();
 
@@ -149,4 +149,4 @@ const StudentManagement: React.FC = () => {
   );
 };
 
-export default StudentManagement;
+export default StudentPage;
